@@ -103,19 +103,7 @@ def show_question():
  
 answers = [rbtn_1, rbtn_2, rbtn_3, rbtn_4]
  
-def ask(q: Question):
-    ''' функция записывает значения вопроса и ответов в соответствующие виджеты, 
-    при этом варианты ответов распределяются случайным образом'''
-    shuffle(answers) # перемешали список из кнопок, теперь на первом месте списка какая-то непредсказуемая кнопка
-    answers[0].setText(q.right_answer) # первый элемент списка заполним правильным ответом, остальные - неверными
-    answers[1].setText(q.wrong1)
-    answers[2].setText(q.wrong2)
-    answers[3].setText(q.wrong3)
-    lb_Question.setText(q.question) # вопрос
-    lb_Correct.setText(q.right_answer) # ответ 
-    show_question() # показываем панель вопросов 
- 
-def show_correct(res):
+
     ''' показать результат - установим переданный текст в надпись "результат" и покажем нужную панель '''
     lb_Result.setText(res)
     show_result()
